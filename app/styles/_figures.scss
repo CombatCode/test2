@@ -1,0 +1,48 @@
+figure {
+    display: block;
+    &.umbrella {
+        width: 153px;
+        height: 167px;
+        background: sprite($sprite-icons, 'umbrella');
+    }
+    &.touch {
+        width: 51px;
+        height: 51px;
+        background: sprite($sprite-icons, 'touch');
+    }
+    &.mobile {
+        width: 274px;
+        height: 51px;
+        background: sprite($sprite-icons, 'mobile');
+    }
+    &.shopping {
+        width: 468px;
+        height: 383px;
+        background: sprite($sprite-images, 'shopping');
+    }
+    &.logos {
+        width: 365px;
+        height: 31px;
+        background: sprite($sprite-icons, 'logos');
+    }
+    &.small {
+        width: 90px;
+        height: 28px;
+        background: sprite($sprite-icons, 'small');
+    }
+    &.lock {
+        width: 112px;
+        height: 158px;
+        background: sprite($sprite-icons, 'lock');
+    }
+    &.payu {
+        width: 290px;
+        height: 220px;
+        background: sprite($sprite-images, 'payu');
+    }
+    &.cafe {
+        width: 272px;
+        height: 91px;
+        background: sprite($sprite-icons, 'cafe');
+    }
+}

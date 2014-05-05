@@ -1,0 +1,27 @@
+@mixin center-box($width) {
+    width: $width;
+    left: 50%;
+    margin-left: $width / -2;
+    position: absolute;
+}
+@mixin border-radius($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -khtml-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin linear-gradient($top, $bottom, $direction: top) {
+    background: -webkit-linear-gradient($direction, $top, $bottom);
+    background: -o-linear-gradient($direction, $top, $bottom);
+    background: -moz-linear-gradient($direction, $top, $bottom);
+    background: linear-gradient($direction, $top, $bottom);
+}
+@mixin breaker-gradient() {
+    background: -moz-linear-gradient(left,  #ffffff 0%, #dedede 30%, #dedede 70%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(30%,#dedede), color-stop(70%,#dedede), color-stop(100%,#ffffff));
+    background: -webkit-linear-gradient(left,  #ffffff 0%,#dedede 30%,#dedede 70%,#ffffff 100%);
+    background: -o-linear-gradient(left,  #ffffff 0%,#dedede 30%,#dedede 70%,#ffffff 100%);
+    background: -ms-linear-gradient(left,  #ffffff 0%,#dedede 30%,#dedede 70%,#ffffff 100%);
+    background: linear-gradient(to right,  #ffffff 0%,#dedede 30%,#dedede 70%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 );
+}

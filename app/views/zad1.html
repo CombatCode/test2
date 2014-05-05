@@ -1,0 +1,59 @@
+<article id="zad1">
+    <section class="create">
+        <h1>Dodaj nową aukcję</h1>
+        <form name="createForm" ng-submit="submitNew()">
+            <label>
+                <span>Nazwa*</span>
+                <input type="text" ng-model="formData.name" required placeholder="np. Telewizor Samsung 20'">
+            </label>
+            <label>
+                <span>Cena (PLN)*</span>
+                <input type="number" ng-model="formData.price" min="0" required placeholder="np. 799">
+            </label>
+            <label>
+                <span>Adres URL*</span>
+                <input type="url" ng-model="formData.url" required placeholder="np. http://allegro.pl/show_item.php?item=4196881005">
+            </label>
+            <label>
+                <span>Adres Obrazka</span>
+                <input type="url" ng-model="formData.img" placeholder="np. http://img01.allegroimg.pl/photos/400x300/41/96/88/10/4196881005">
+            </label>
+            <label>
+                <span>Data zakończenia</span>
+                <input type="text" ng-model="formData.endDate" placeholder="np. 13 maja, 12:16:59">
+            </label>
+            <button class="add" type="submit">Dodaj</button>
+            <button class="reset" type="reset">Wyczyść</button>
+        </form>
+    </section>
+    <section class="products">
+        <h1>Twoje aukcje ({{ products.length }})</h1>
+        <table ng-show="products.length > 0">
+            <thead>
+                <tr>
+                    <th><!-- thumbnail --></th>
+                    <th><a ng-click="orderBy('name')">Nazwa</a></th>
+                    <th><a ng-click="orderBy('price')">Cena (PLN)</a></th>
+                    <th><a ng-click="orderBy('url')">Adres URL aukcji</a></th>
+                    <th><a ng-click="orderBy('endDate')">Data zakończenia</a></th>
+                    <th>Usuń</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products | orderBy:order">
+                    <td class="img"><img ng-src="{{ product.img }}" alt="{{ product.name }}"></td>
+                    <td class="name">{{ product.name }}</td>
+                    <td class="price">{{ product.price }}</td>
+                    <td class="url"><a ng-href="{{ product.url }}">{{ product.url }}</a></td>
+                    <td class="enddate">{{ product.endDate }}</td>
+                    <td class="delete"><button ng-click="remove(product)">x</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="options">
+        <h1>Dodatkowe opcje</h1>
+        <button ng-click="loadSample()">Przykładowe dane</button>
+        <button ng-click="clearAll()">Wyczyść wszystko</button>
+    </section>
+</article>

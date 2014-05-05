@@ -1,0 +1,432 @@
+/**
+ * Imports
+ */
+
+@import "sprites";
+@import "mixins";
+@import "colors";
+@import "figures";
+@import "responsive";
+
+/** Global styles */
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    position: relative;
+    display: block;
+    zoom: 1;
+    &:after{
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+}
+
+%classicButton {
+    width: 50%;
+    float: left; 
+    position: relative;
+    height: 50px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: #dbdbdb;
+    cursor: pointer;
+    line-height: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+    &:hover {
+        background-color: #bdbdbd;
+    }
+}
+
+span, strong {
+    &.blue {
+        color: $blue;
+    }
+    &.yellow {
+        color: $yellow;
+    }
+    &.orange {
+        color: $orange;
+    }
+}
+
+.push2left {
+    float: left;
+    display: block;
+}
+.push2right {
+    float: right;
+    display: block;
+}
+
+hr {
+    @include breaker-gradient();
+    height: 1px;
+    width: 100%;
+    border: none; /** reset */
+    border-bottom: 1px solid #fff;
+    display: block;
+    margin: 0;
+}
+/** Specified for sections */
+article {
+    &#zad2 {
+        @include center-box(1200px);
+        header {
+            h1 {
+                padding: 6px 12px 0px;
+                font-size: 27px;
+            }
+        }
+        section {
+            &.pok {
+                @include linear-gradient(#f7f7f7, #ffffff);
+                height: 308px;
+                h2 {
+                    position: absolute;
+                    left: 94px;
+                    top: 84px;
+                    font-size: 40px;
+                    letter-spacing: 1px;
+                }
+                h3 {
+                    position: absolute;
+                    right: 179px;
+                    top: 106px;
+                    font-size: 18px;
+                    letter-spacing: 1px;
+                }
+                span {
+                    &.for-h2 {
+                        position: absolute;
+                        left: 97px;
+                        top: 169px;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                    &.for-h3 {
+                        position: absolute;
+                        right: 185px;
+                        top: 154px;
+                        font-size: 14px;
+                    }
+                }
+                a {
+                    &.button {
+                        @include linear-gradient(#fc8819, #fe5a03, top);
+                        @include border-radius(6px);
+                        border: 1px solid #fb9527;
+                        width: 266px;
+                        height: 38px;
+                        display: block;
+                        text-align: center;
+                        line-height: 38px;
+                        right: 191px;
+                        padding-right: 11px;
+                        font-size: 14px;
+                        position: absolute;
+                        top: 183px;
+                        color: white;
+                        font-weight: bold;
+                        text-decoration: none;
+                        &:hover {
+                            @include linear-gradient(#fc8819, #fe5a03, bottom);
+                        }
+                    }
+                }
+                figure {
+                    &.umbrella {
+                        position: absolute;
+                        left: 482px;
+                        top: 68px;
+                    }
+                }
+            }
+            &.download-app {
+                background: url('../images/bg/bg-sc2.png');
+                height: 98px;
+                span {
+                    position: absolute;
+                    left: 309px;
+                    top: 41px;
+                    font-size: 20px;
+                }
+                figure {
+                    &.touch {
+                        position: absolute;
+                        top: 10px;
+                        left: 199px;
+                    }
+                    &.mobile {
+                        position: absolute;
+                        left: 622px;
+                        top: 9px;
+                    }
+                }
+            }
+            &.easy-shopping {
+                padding: 34px 0 0 36px;
+                height: 400px;
+                > figure {
+                    float: left;
+                }
+                .push2right {
+                    width: 570px;
+                    padding-top: 51px;
+                    > span {
+                        font-size: 26px;
+                    }
+                    h4 {
+                        font-size: 40px;
+                        margin: 0px;
+                    }
+                    ul {
+                        margin: 31px 0px 0px -26px;
+                        font-size: 12px;
+                        li {
+                            margin-bottom: 8px;
+                        }
+                    }
+                    figure {
+                        &.logos {
+                            margin: 36px 0 0 -4px;
+                        }
+                    }
+                }
+            }
+            &.addons {
+                .standards {
+                    width: 522px;
+                    padding-left: 47px;
+                    position: relative;
+                    h5 {
+                        font-size: 30px;
+                        font-weight: normal;
+                        margin: 14px 0 0;
+                    }
+                    ul {
+                        margin: 33px 0 0 16px;
+                        font-size: 12px;
+                        padding: 0;
+                        > li {
+                            line-height: 21px;
+                        }
+                    }
+                    figure {
+                        margin: 0;
+                        &.small {
+                            margin: 29px 0 0 14px;
+                        }
+                        &.lock {
+                            position: absolute;
+                            right: 0;
+                            top: 52px;
+                        }
+                    }
+                }
+                .payments {
+                    width: 543px;
+                    position: relative;
+                    h5 {
+                        font-size: 25px;
+                        margin: 17px 0 0 0;
+                        font-weight: normal;
+                        strong {
+                            letter-spacing: 1px;
+                            font-size: 24px;
+                        }
+                    }
+                    figure {
+                        &.payu {
+                            margin: 26px 0 0 30px;
+                        }
+                    }
+                    ul {
+                        position: absolute;
+                        top: 82px;
+                        left: 204px;
+                        line-height: 21px;
+                        font-size: 12px;
+                    }
+                }
+            }
+            &.advert {
+                height: 118px;
+                figure {
+                    vertical-align: middle;
+                    &.cafe {
+                        margin: 18px 0 0 243px;
+                    }
+                }
+                p {
+                    position: absolute;
+                    top: 23px;
+                    left: 559px;
+                    font-size: 20px;
+                }
+            }
+        }
+        footer {
+            padding: 27px 0 0 50px;
+            display: block;
+            height: 130px;
+            .col1, .col2, .col3 {
+                h6 {
+                    margin: 0;
+                    font-size: 20px;
+                }
+                p {
+                    margin: 8px 0 0;
+                    font-size: 11px;
+                    line-height: 16px;
+                }
+            }
+            .col1 {
+                ul {
+                    margin: 10px 0 0;
+                    line-height: 17px;
+                    padding: 0;
+                    font-size: 11px;
+                    list-style: none;
+                }
+            }
+            .col2 {
+                margin: 0 201px 0 209px;
+            }
+        }
+    }
+    &#zad1 {
+        @include center-box(1200px);
+        section {
+            h1 {
+                margin: 0;
+                background-color: #333;
+                color: #fdfdfd;
+                font-weight: normal;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                text-align: center;
+                padding: 10px 0;
+            }
+            &.create {
+                form {
+                    label {
+                        display: block;
+                        margin: 0;
+                        border: 1px solid #efefef;
+                        span {
+                            display: inline-block;
+                            width: 17%;
+                            min-height: 50px;
+                            background-color: #ededed;
+                            text-transform: uppercase;
+                            line-height: 50px;
+                            text-align: right;
+                            padding-right: 3%;
+                            color: #333;
+                            font-size: 18px;
+                        }
+                        input {
+                            height: 49px;
+                            border: none;
+                            width: 75%;
+                            font-size: 18px;
+                            padding: 0 2%;
+                        }
+                    }
+                    button {
+                        @extend %classicButton;
+                    }
+                }
+            }
+            &.products {
+                table {
+                    border-spacing: 0;
+                    width: 100%;
+                    thead {
+                        background-color: #666;
+                        color: #fdfdfd;
+                        tr {
+                            th {
+                                text-align: center;
+                                a {
+                                    width: 100%;
+                                    display: block;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            &:nth-child(odd) {
+                                background-color: #ededed;
+                            }
+                            td {
+                                padding: 5px;
+                                text-align: center;
+                                &.img {
+                                    width: 10%;
+                                    > img {
+                                        width: 100%
+                                    }
+                                }
+                                &.name {
+                                    font-weight: bold;
+                                    width: 25%;
+                                }
+                                &.price {
+                                    width: 10%;
+                                }
+                                &.url {
+                                    width: 30%;
+                                    a {
+                                        color: #444;
+                                    }
+                                }
+                                &.enddate {
+                                    width: 15%;
+                                }
+                                &.delete {
+                                    width: 10%;
+                                    button {
+                                        background-color: #e3e3e3;
+                                        border: none;
+                                        cursor: pointer;
+                                        &:hover {
+                                            background-color: #ededed;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.options {
+                button {
+                    @extend %classicButton;
+                }
+            }
+        }
+    }
+    &#intro {
+        a {
+            @extend %classicButton;
+            text-decoration: none;
+            text-align: center;
+            color: #333;
+            min-height: 300px;
+            line-height: 300px;
+        }
+    }
+}
